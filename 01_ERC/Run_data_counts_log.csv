@@ -1,0 +1,15 @@
+Jobname,File_or_folder,Count
+p1_r20, Species_mapping, 35
+p1_r20, Seq_counts_per_species, 25184
+p1_r20, Filtered_genefam_dataset, 2516
+p1_r20, HOG_seqs, 2516
+p1_r20, Alns, 2512
+p1_r20, TAPER_Alns, 2512
+p1_r20, Gb_alns, 2467
+p1_r20, Gb_alns/Too_short, 45
+p1_r20, Aln_pruning, 12
+p1_r20, BS_trees, 2467
+p1_r20, Rearranged_trees, 2467
+p1_r20, BL_trees, 2467
+p1_r20, DLCpar, 2467
+p1_r20, Dropped_gene_log, 22717

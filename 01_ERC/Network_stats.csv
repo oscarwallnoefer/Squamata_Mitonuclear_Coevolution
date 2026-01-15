@@ -1,0 +1,15 @@
+p1_r20,R2T,0.05,0.7,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.05_0.7_FDR,True,True,2046,1002
+p1_r20,R2T,0.05,0.4,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.05_0.4_FDR,True,True,61369,2395
+p1_r20,R2T,0.05,0.5,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.05_0.5_FDR,True,True,25300,2208
+p1_r20,R2T,0.05,0.6,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.05_0.6_FDR,True,True,8505,1746
+p1_r20,R2T,0.05,0.8,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.05_0.8_FDR,True,True,263,286
+p1_r20,R2T,0.01,0.8,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.01_0.8_FDR,True,True,260,283
+p1_r20,R2T,0.01,0.7,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.01_0.7_FDR,True,True,2027,994
+p1_r20,R2T,0.01,0.6,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.01_0.6_FDR,True,True,8422,1737
+p1_r20,R2T,0.01,0.5,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.01_0.5_FDR,True,True,24842,2199
+p1_r20,R2T,0.01,0.4,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.01_0.4_FDR,True,True,56200,2379
+p1_r20,R2T,0.001,0.4,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.001_0.4_FDR,True,True,26851,2174
+p1_r20,R2T,0.001,0.5,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.001_0.5_FDR,True,True,20170,2075
+p1_r20,R2T,0.001,0.6,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.001_0.6_FDR,True,True,7678,1653
+p1_r20,R2T,0.001,0.7,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.001_0.7_FDR,True,True,1965,974
+p1_r20,R2T,0.001,0.8,fg,0,Nnaj,Filtered_ERC_results_R2T_spearman_0.001_0.8_FDR,True,True,247,270

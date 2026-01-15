@@ -48,5 +48,5 @@ Then, we ran InterProScan as following:
 
       /home/PERSONALE/oscar.wallnoefer2/my_interproscan/interproscan-5.71-102.0/interproscan.sh -i input_interproscan.fasta --goterms --pathways --cpu 16 -appl PANTHER -d interproscan_output
 
-GO enrichment was performed in R (`GOenrichment.R`), using GO terms associated by InterProScan as background. Multiple lists of interest from ERC networks (i.e., communities, direct neighbours).
+GO enrichment was performed in R (`GOenrichment.R`, writted by @MirkMart), using GO terms associated by InterProScan as background. Multiple lists of interest from ERC networks (i.e., communities, direct neighbours).
 

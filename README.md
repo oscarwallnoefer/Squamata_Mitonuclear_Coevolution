@@ -6,7 +6,7 @@ a. modificare metodi: io ho usato -l 100. Quindi ho tenuto per le analisi di ERC
 
 b. riorganizzare tutto in github. É troppo pericoloso continuare in questo modo, non ci si capisce nulla. Ridurre il numero di file, tenere solo lo stretto necessario. 
 
-c. rifare interproscan sia per ERC che per AU. L'errore è in run_longest.sh. Invece di prendere la sequenza più lunga (tail), prende la più corta (head). Tenere come background solo i geni presenti nel network più grande.
+c. rifare interproscan sia per ERC che per AU. L'errore è in run_longest.sh. Invece di prendere la sequenza più lunga (tail), prende la più corta (head). Tenere come background solo i geni presenti nel network più grande. > FATTO, file in 00_NEW_ERC/NEW_interproscan_output.
 
 d. aggiungi check intermedi nelle pipeline. Ci sono troppi passaggi. 
 

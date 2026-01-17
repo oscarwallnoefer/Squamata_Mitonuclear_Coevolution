@@ -14,14 +14,14 @@ colnames(d) <- c("id", "scf", "gcf", "bootstrap")
 
 p <- ggplot(d, aes(x = gCF, y = sCF, label = ID)) +
   geom_point(aes(colour = bootstrap), size = 4) +
-  scale_colour_viridis_c(option = "D", direction = -1) +  # scala continua per numeri
+  scale_colour_viridis_c(option = "D", direction = -1) +
   geom_text_repel(max.overlaps = Inf,
                   box.padding = 0.5,
                   point.padding = 0.1,
                   segment.size = 0.5,
                   size = 3.5) +
   geom_abline(slope = 1, intercept = 0, linetype = "dashed") +
-  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100)) +    # assi 0-100
+  coord_cartesian(xlim = c(0, 100), ylim = c(0, 100)) +
   theme_light() +
   theme(
     axis.title = element_text(size = 14),

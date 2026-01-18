@@ -15,22 +15,24 @@ Each of 2,175 proteins were used as input for AU test, where we compared the top
 All orthologs (both mitochondrial and nuclear proteins) were aligned using MAFFT (--maxiterate 1000 --localpair), and trimmed using TrimAl (-gappyout). 
 For each of the 1,175 alignments, we calculated gene trees as follow:
 
-      iqtree -s trim_aln_[ortholog] -m MFP -B 1000 -T 16
+        iqtree -s trim_aln_[ortholog] -m MFP -B 1000 -T 16
 
 Gene models are stored in `gene_models.tsv`.
 
 The two alternative topologies were created as follows:
 + the **mitochondrial-based tree** was a maximum likelihood tree using the 13 mtOXPHOS from 31 species (partition models).
 
-      iqtree -s concatenated.out -p partitions.txt -m MFP+MERGE -b 100 -T 16 -pre ML_mitochondrial_squamata
+        iqtree -s concatenated.out -p partitions.txt -m MFP+MERGE -b 100 -T 16 -pre ML_mitochondrial_squamata
+        pwd: /home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/00_database/mtOXPHOS/all/01_ML
 
 + the **nuclear-based tree** derived from a subset of orthologs composed of those genes with the same 31 species as in the mitochondrial dataset. It resulted in 681 orthologs (we excluded the mtXPHOS from this gene dataset). 
       
-      iqtree -s concatenated_681HOG.out -p partitions_681HOG.txt -m MFP+MERGE -B 1000 -T 16 -pre ML_speciestree_squamata
+        iqtree -s concatenated_681HOG.out -p partitions_681HOG.txt -m MFP+MERGE -B 1000 -T 16 -pre ML_speciestree_squamata
+        pwd: /home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/03_Evolutionary_Rates_Covariation_Squamata/AUtest/01_AUtest/02_output_phylopypruner/phylopypruner_output/new_species_tree/outgroup
 
 Orthologs, their gene models and the two alternative topologies (nuclear and mitochondrial) were used as follow to perform the AU test:
 
-      iqtree -s [ortholog].fa -m [model] -z topologies.nwk -n 0 -zb 10000 -au -T 32 -pre TEST_[ortholog].fa
+        iqtree -s [ortholog].fa -m [model] -z topologies.nwk -n 0 -zb 10000 -au -T 32 -pre TEST_[ortholog].fa
 
 Results were summarized here: `AU_test_summary.tsv`.
 

@@ -12,7 +12,7 @@ Once retrieved the correct paralog for *S. punctatus* for each ortholog, we filt
 
 Each of 2,175 proteins were used as input for AU test, where we compared the topological preference towards the nuclear-based tree or the mitochondrial-based tree.
 
-All orthologs (both mitochondrial and nuclear proteins) were aligned using MAFFT (--maxiterate 1000 --localpair), and trimmed using TrimAl (-gappyout). 
+All orthologs (both mitochondrial and nuclear proteins) were aligned using MAFFT (--maxiterate 1000 --localpair), and trimmed using TrimAl (-automated1). 
 For each of the 1,175 alignments, we calculated gene trees as follow:
 
         iqtree -s trim_aln_[ortholog] -m MFP -B 1000 -T 16

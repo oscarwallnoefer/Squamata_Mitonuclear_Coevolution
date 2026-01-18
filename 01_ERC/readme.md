@@ -40,8 +40,8 @@ We wrote some python scripts:
 
 We used [bioKIT](https://jlsteenwyk.com/BioKIT/) to sort 2,424 orthogroups by sequence length, and we retained the longest per orthogroup. 
 
-      biokit reorder_by_sequence_length
-      for a in *ed.fa; do seqkit head -n 1 ${a} > longest_${a}; done
+      for a in *; do biokit reorder_by_sequence_length ${a}; done 
+      for a in HOG*reordered.fa; do seqkit head -n 1 ${a} > longest_${a}; done
       cat longest_* > input_interproscan.fa
 
 Then, we ran InterProScan as following:

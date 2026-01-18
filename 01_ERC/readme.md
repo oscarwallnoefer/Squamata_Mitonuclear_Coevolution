@@ -50,8 +50,15 @@ Then, we ran InterProScan as following:
 
 GO background was prepared using this command: 
 
-      cut -f 14 input_interproscan.fasta.tsv | grep GO | sed 's/(PANTHER)//g' | sed 's/(InterPro)//g' | sed 's/[|]/,/g' > GObackground.txt
-      awk -F',' '{delete s; o=""; for(i=1;i<=NF;i++) if(!s[$i]++) o=(o?o","$i:$i); print o}' GObackground.txt
+      cut -f 1,14 input_interproscan.fasta.tsv | grep GO | sed 's/(PANTHER)//g' | sed 's/(InterPro)//g' | sed 's/[|]/,/g' > GObackground.txt
+      awk -F'\t' '{split($2,g,","); delete s; o=""; for(i in g) if(!s[g[i]]++) o=(o?o","g[i]:g[i]); print $1 "\t" o}' GObackground.txt
+      awk -F "__" '{print$3}' GObackground.txt
+
+**Summary**
+
+> 2424 rows in ERC_results.tsv # number of proteins for ERC
+> 2403 rows in input_interproscan_HOG.tsv # number of HOGs successfully annotated by InterProScan
+> 1924 rows in GObackground.txt # number of HOGs with GO terms association
 
 The file `GObackground.txt` associate 1924 proteins to GO terms. 
 GO enrichment was performed in R (`GOenrichment.R`, writted by @MirkMart). 

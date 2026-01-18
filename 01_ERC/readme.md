@@ -48,5 +48,13 @@ Then, we ran InterProScan as following:
 
       /home/PERSONALE/oscar.wallnoefer2/my_interproscan/interproscan-5.71-102.0/interproscan.sh -i input_interproscan.fasta --goterms --pathways --cpu 16 -appl PANTHER -d interproscan_output
 
-GO enrichment was performed in R (`GOenrichment.R`, writted by @MirkMart), using GO terms associated by InterProScan as background. Multiple lists of interest from ERC networks (i.e., communities, direct neighbours).
+GO background was prepared using this command: 
+
+      cut -f 14 input_interproscan.fasta.tsv | grep GO | sed 's/(PANTHER)//g' | sed 's/(InterPro)//g' | sed 's/[|]/,/g' > GObackground.txt
+      awk -F',' '{delete s; o=""; for(i=1;i<=NF;i++) if(!s[$i]++) o=(o?o","$i:$i); print o}' GObackground.txt
+
+The file `GObackground.txt` associate 1924 proteins to GO terms. 
+GO enrichment was performed in R (`GOenrichment.R`, writted by @MirkMart). 
+
+We applied gene enrichment to multiple lists of interest extracted from ERC networks (i.e., communities, direct neighbours).
 

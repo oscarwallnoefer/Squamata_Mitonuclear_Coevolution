@@ -56,11 +56,11 @@ GO background was prepared using this command:
 
 **Summary**
 
-+ 2424 rows in ERC_results.tsv # number of proteins for ERC
-+ 2403 rows in input_interproscan_HOG.tsv # number of HOGs successfully annotated by InterProScan
-+ 1924 rows in GObackground.txt # number of HOGs with GO terms association
++ 2,424 rows in ERC_results.tsv # number of proteins for ERC
++ 2,403 rows in input_interproscan_HOG.tsv # number of HOGs successfully annotated by InterProScan
++ 1,924 rows in GObackground.txt # number of HOGs with GO terms association
 
-The file `GObackground.txt` associate 1924 proteins to GO terms. 
+The file `GObackground.txt` associate 1,924 proteins to GO terms. 
 GO enrichment was performed in R (`GOenrichment.R`, writted by @MirkMart). 
 
 We applied gene enrichment to multiple lists of interest extracted from ERC networks (i.e., communities, direct neighbours).
@@ -68,13 +68,10 @@ We applied gene enrichment to multiple lists of interest extracted from ERC netw
 ---
 
 # Alignment statistics
-
-We aligned the 2,424 orthologs using MAFFT (--localpair --maxiterate 1000) and TrimAl (-automated1), as previously done. 
-
   pwd:/home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/03_Evolutionary_Rates_Covariation_Squamata/ERCnet/OUT_p1_r20/01_InterProScan/00_alignment_statistics
 
-We used AMAS for calculate assembly statistics:
+We used AMAS to calculate assembly statistics on the 2,424 trimmed alingments.
 
-  AMAS.py summary -i ALN_* -f fasta -d aa -o summary_2424HOG.txt
+  AMAS.py summary -i GB_* -f fasta -d aa 
 
 and visualized on R (`run_compare_stats.R`).

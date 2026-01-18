@@ -65,3 +65,16 @@ GO enrichment was performed in R (`GOenrichment.R`, writted by @MirkMart).
 
 We applied gene enrichment to multiple lists of interest extracted from ERC networks (i.e., communities, direct neighbours).
 
+---
+
+# Alignment statistics
+
+We aligned the 2,424 orthologs using MAFFT and TrimAl, as previously done. 
+
+  pwd:/home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/03_Evolutionary_Rates_Covariation_Squamata/ERCnet/OUT_p1_r20/01_InterProScan/00_alignment_statistics
+
+We used AMAS for calculate assembly statistics:
+
+  AMAS.py summary -i ALN_* -f fasta -d aa -o summary_2424HOG.txt
+
+and visualized on R (`run_compare_stats.R`).

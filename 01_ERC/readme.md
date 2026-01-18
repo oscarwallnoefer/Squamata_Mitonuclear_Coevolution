@@ -69,7 +69,7 @@ We applied gene enrichment to multiple lists of interest extracted from ERC netw
 
 # Alignment statistics
 
-We aligned the 2,424 orthologs using MAFFT and TrimAl, as previously done. 
+We aligned the 2,424 orthologs using MAFFT (--localpair --maxiterate 1000) and TrimAl (-automated1), as previously done. 
 
   pwd:/home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/03_Evolutionary_Rates_Covariation_Squamata/ERCnet/OUT_p1_r20/01_InterProScan/00_alignment_statistics
 

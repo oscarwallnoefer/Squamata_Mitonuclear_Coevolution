@@ -56,9 +56,9 @@ GO background was prepared using this command:
 
 **Summary**
 
-> 2424 rows in ERC_results.tsv # number of proteins for ERC
-> 2403 rows in input_interproscan_HOG.tsv # number of HOGs successfully annotated by InterProScan
-> 1924 rows in GObackground.txt # number of HOGs with GO terms association
++ 2424 rows in ERC_results.tsv # number of proteins for ERC
++ 2403 rows in input_interproscan_HOG.tsv # number of HOGs successfully annotated by InterProScan
++ 1924 rows in GObackground.txt # number of HOGs with GO terms association
 
 The file `GObackground.txt` associate 1924 proteins to GO terms. 
 GO enrichment was performed in R (`GOenrichment.R`, writted by @MirkMart). 

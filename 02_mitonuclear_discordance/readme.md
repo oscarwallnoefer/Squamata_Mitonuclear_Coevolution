@@ -20,12 +20,12 @@ For each of the 1,175 alignments, we calculated gene trees as follow:
 Gene models are stored in `gene_models.tsv`.
 
 The two alternative topologies were created as follows:
-+ the **mitochondrial-based tree** was a maximum likelihood tree using the 13 mtOXPHOS from 31 species (partition models).
++ the **mitochondrial-based tree** (`mitochondrial_markers.treefile`) was a maximum likelihood tree using the 13 mtOXPHOS from 31 species (partition models).
 
         iqtree -s concatenated.out -p partitions.txt -m MFP+MERGE -b 100 -T 16 -pre ML_mitochondrial_squamata
         pwd: /home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/00_database/mtOXPHOS/all/01_ML
 
-+ the **nuclear-based tree** derived from a subset of orthologs composed of those genes with the same 31 species as in the mitochondrial dataset. It resulted in 681 orthologs (we excluded the mtXPHOS from this gene dataset). 
++ the **nuclear-based tree** (`nuclear_markers.treefile`) derived from a subset of orthologs composed of those genes with the same 31 species as in the mitochondrial dataset. It resulted in 681 orthologs (we excluded the mtXPHOS from this gene dataset). 
       
         iqtree -s concatenated_681HOG.out -p partitions_681HOG.txt -m MFP+MERGE -B 1000 -T 16 -pre ML_speciestree_squamata
         pwd: /home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/03_Evolutionary_Rates_Covariation_Squamata/AUtest/01_AUtest/02_output_phylopypruner/phylopypruner_output/new_species_tree/outgroup

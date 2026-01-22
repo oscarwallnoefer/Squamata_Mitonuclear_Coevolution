@@ -4,12 +4,22 @@
 
 ### AU test
 
-We used the same set of orthologs as in ERCnet. Firstly, we added the outgroup *S. punctatus*: this species is lacking is ERCnet because outgroups are excluded from the branch lenght covariations. To add it, we identified the correct paralogs using [phylopypruner](https://github.com/fethalen/phylopypruner) with default parameters.
+We used the same set of orthologs as in ERCnet (2,424 orthogroups). 
+Firstly, we added the outgroup *S. punctatus*: this species was lacking in ERCnet because outgroups are excluded from the branch lenght covariations. To add it, we identified the correct paralogs using [phylopypruner](https://github.com/fethalen/phylopypruner) with default parameters.
 
-        phylopypruner --threads 12 --output output_phylopypruner --no-plot --no-supermatrix --dir 01_input_phylopypruner/ --min-taxa 20
+        phylopypruner --threads 12 --output output_phylopypruner --no-plot --no-supermatrix --dir 01_input_phylopypruner/
 
-While retrieving the correct paralog for *S. punctatus* for each ortholog, the number of orthologs decreased from 2,424 to 2,175 (also due to the other default thresholds of phylopypruner). We exluded also the 13 mtOXPHOS from the gene dataset for the AU test.
-Then, we retained in the dataset only those proteins with at least one representative for Acrodonta, a key clade for mitonuclear discordance in Squamata. The number of orthologs decreased from 2,175 to 2,101. Then, we retained only those orthogroups shared with ERCnet dataset. After the last trimming, the gene dataset rested to 2,036.
+While retrieving the correct paralog for *S. punctatus* for each ortholog.
+
+Then, we exluded the 13 mtOXPHOS from the gene dataset for the AU test.
+
+Then, we retained in the dataset only those proteins with at least one representative for Acrodonta, a key clade for mitonuclear discordance in Squamata:
+
+        for a in *.fasta; do /home/PERSONALE/oscar.wallnoefer2/00_script/filter_fasta_by_list_of_headers.py ${a} toremove.txt > pruned_${a}; done 
+
+The number of orthologs decreased from X,XXX to X,XXX. 
+
+After the last trimming, the gene dataset rested to X,XXX, entirely composed of a ERCnet orthogroups subset.
 
 Each of X,XXX proteins were used as input for AU test, where we compared the topological preference towards the nuclear-based tree or the mitochondrial-based tree.
 

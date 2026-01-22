@@ -7,11 +7,9 @@
 We used the same set of orthologs as in ERCnet (2,424 orthogroups). 
 Firstly, we added the outgroup *S. punctatus*: this species was lacking in ERCnet because outgroups are excluded from the branch lenght covariations. To add it, we identified the correct paralogs using [phylopypruner](https://github.com/fethalen/phylopypruner) with default parameters (see `phylopypruner_details.txt`).
 
-        phylopypruner --threads 12 --output 02_output_phylopypruner_2424 --mask pdist --min-len 50 --no-plot --no-supermatrix --dir 01_input_phylopypruner/
-        
-While retrieving the correct paralog for *S. punctatus* for each ortholog.
+        phylopypruner --threads 12 --output 02_output_phylopypruner_2424 --mask pdist --min-len 100 --trim-lb 5 --exclude Iles Ahom Eeur Tsci --no-plot --no-supermatrix --dir 01_input_phylopypruner/
 
-Then, we exluded the 13 mtOXPHOS from the gene dataset for the AU test.
+Then, we exluded the 13 mtOXPHOS from the gene dataset for the AU test. 
 
 Then, we retained in the dataset only those proteins with at least one representative for Acrodonta, a key clade for mitonuclear discordance in Squamata:
 

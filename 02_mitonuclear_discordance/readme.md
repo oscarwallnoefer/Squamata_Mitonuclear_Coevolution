@@ -8,12 +8,14 @@ We used the same set of orthologs as in ERCnet. Firstly, we added the outgroup *
 
         phylopypruner --threads 12 --output output_phylopypruner --no-plot --no-supermatrix --dir 01_input_phylopypruner/ --min-taxa 20
 
-Once retrieved the correct paralog for *S. punctatus* for each ortholog, we filtered out all the orthologs without *S. punctatus*, that served as outgroup. The number of orthologs decreased from 2,516 to 2,175.
+While retrieving the correct paralog for *S. punctatus* for each ortholog, the number of orthologs decreased from 2,424 to 2,175 (also due to the other default thresholds of phylopypruner). We exluded also the 13 mtOXPHOS from the gene dataset for the AU test.
+Then, we retained in the dataset only those proteins with at least one representative for Acrodonta, a key clade for mitonuclear discordance in Squamata. The number of orthologs decreased from 2,175 to 2,101. Then, we retained only those orthogroups shared with ERCnet dataset. After the last trimming, the gene dataset rested to 2,036.
 
-Each of 2,175 proteins were used as input for AU test, where we compared the topological preference towards the nuclear-based tree or the mitochondrial-based tree.
+Each of X,XXX proteins were used as input for AU test, where we compared the topological preference towards the nuclear-based tree or the mitochondrial-based tree.
 
 All orthologs (both mitochondrial and nuclear proteins) were aligned using MAFFT (--maxiterate 1000 --localpair), and trimmed using TrimAl (-automated1). 
-For each of the 1,175 alignments, we calculated gene trees as follow:
+
+For each of the X,XXX alignments, we calculated gene trees as follow:
 
         iqtree -s trim_aln_[ortholog] -m MFP -B 1000 -T 16
 

@@ -1,0 +1,39 @@
+phylopypruner --threads 12 --output 02_output_phylopypruner_2424 --mask pdist --min-len 50 --no-plot --no-supermatrix --dir 01_input_phylopypruner/
+/home/PERSONALE/oscar.wallnoefer2/miniforge3/lib/python3.12/site-packages/phylopypruner/__main__.py:19: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+PhyloPyPruner version 1.2.4
+> using 12 out of 64 available threads
+> fetching files from directory
+> processing MSAs and trees (2509/2509)
+> wrote output to:
+  02_output_phylopypruner_2424/phylopypruner_output
+
+Parameters (~ = required, [x] = used, [ ] = unused):
+  [ ] Always exclude the following OTUs: None
+  [x] Remove sequences shorter than 50 bases
+  [ ] Remove branches longer than _ standard deviations of all branches
+  [ ] Collapse branches with less support than _% into polytomies
+   ~  Mask monophylies using the pdist method
+  [ ] These OTUs were used for outgroup rooting: None
+  [ ] Alternative rooting method: None
+  [ ] The Paralogy frequency threshold is set to _
+  [ ] The Divergence threshold is set to _
+  [ ] Include these OTUs, even if deemed problematic: None
+   ~  Prune paralogs using the LS method
+  [x] Discard output alignments with fewer than 4 sequences
+  [ ] Taxon jackknifing is not performed
+  [ ] Discard OTUs with less than _% occupancy
+  [ ] Discard genes with less than _% occupancy
+
+Alignment statistics:
+  Description                        Input      Output  
+  No. of alignments                     2509       2508
+  No. of sequences                     83560      73365
+  No. of OTUs                             35         35
+  Avg no. of sequences / alignment        33         29
+  Avg no. of OTUs / alignment             32         29
+  Avg sequence length (ungapped)         459        465
+  Shortest sequence (ungapped)             3         50
+  Longest sequence (ungapped)           4828       4828
+  % missing data                       11.00      19.60
+  Concatenated alignment length      1191692    1191138

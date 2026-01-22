@@ -5,10 +5,10 @@
 ### AU test
 
 We used the same set of orthologs as in ERCnet (2,424 orthogroups). 
-Firstly, we added the outgroup *S. punctatus*: this species was lacking in ERCnet because outgroups are excluded from the branch lenght covariations. To add it, we identified the correct paralogs using [phylopypruner](https://github.com/fethalen/phylopypruner) with default parameters.
+Firstly, we added the outgroup *S. punctatus*: this species was lacking in ERCnet because outgroups are excluded from the branch lenght covariations. To add it, we identified the correct paralogs using [phylopypruner](https://github.com/fethalen/phylopypruner) with default parameters (see `phylopypruner_details.txt`).
 
-        phylopypruner --threads 12 --output output_phylopypruner --no-plot --no-supermatrix --dir 01_input_phylopypruner/
-
+        phylopypruner --threads 12 --output 02_output_phylopypruner_2424 --mask pdist --min-len 50 --no-plot --no-supermatrix --dir 01_input_phylopypruner/
+        
 While retrieving the correct paralog for *S. punctatus* for each ortholog.
 
 Then, we exluded the 13 mtOXPHOS from the gene dataset for the AU test.

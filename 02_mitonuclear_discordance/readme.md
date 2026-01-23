@@ -4,47 +4,60 @@
 
 ### AU test
 
-We used the same set of orthologs as in ERCnet (2,424 orthogroups). 
-Firstly, we added the outgroup *S. punctatus*: this species was lacking in ERCnet because outgroups are excluded from the branch lenght covariations. To add it, we identified the correct paralogs using [phylopypruner](https://github.com/fethalen/phylopypruner) with default parameters (see `phylopypruner_details.txt`).
+We used the same set of orthologs that passed Orthofinder and that was used in the first step of ERCnet (2,509 orthogroups). 
+Firstly, we added the outgroup *S. punctatus*: this species was lacking in ERCnet because outgroups are excluded from the branch lenght covariations. To add it, we identified the correct paralogs using [phylopypruner](https://github.com/fethalen/phylopypruner) with these parameters (see `phylopypruner_details.txt`):
 
-        phylopypruner --threads 12 --output 02_output_phylopypruner_2424 --mask pdist --min-len 100 --trim-lb 5 --exclude Iles Ahom Eeur Tsci --no-plot --no-supermatrix --dir 01_input_phylopypruner/
+        phylopypruner --threads 12 --output 02_output_phylopypruner --mask longest --exclude Ahom Iles Tsci Eeur --min-support 100 --outgroup Spun --prune LS --subclades subclades_2.txt --no-plot --no-supermatrix --min-len 100 --dir 01_input_phylopypruner/
 
-Then, we exluded the 13 mtOXPHOS from the gene dataset for the AU test. 
+Then, we retained only those orthogroups with at least one reprentative for each one of the key four groups for mitonuclear discordance in Squamata: Acrodonta, Pleurodonta, Serpentes and Others (Gekkota,Anguimorpha,Laterata,Scincomorpha and S. punctatus).
 
-Then, we retained in the dataset only those proteins with at least one representative for Acrodonta, a key clade for mitonuclear discordance in Squamata:
+        for f in trim*.fa; do grep -q -E '^(>)(Pvit|Pfor|Lsac|Pprz)\b' "$f" &&   grep -q -E '^(>)(Acar|Asag|Sund|Ppla)\b' "$f" &&   grep -q -E '^(>)(Tele|Apra|Pcat|Pgut|Nnaj|Nscu|Ptex|Ohan|Pmuc|Cada|Casp|Ereg|Pbiv)\b' "$f" &&   grep -q -E '^(>)(Emac|Stow|Hbin|Gjap|Praf|Zviv|Lagi|Vkom|Ledw|Spun)\b' "$f" &&   echo "$f";  done > list_to_be_kept.txt
 
-        for a in *.fasta; do /home/PERSONALE/oscar.wallnoefer2/00_script/filter_fasta_by_list_of_headers.py ${a} toremove.txt > pruned_${a}; done 
+The number of orthologs decreased from 2,509 to 2,353. 
 
-The number of orthologs decreased from X,XXX to X,XXX. 
+Then, we exluded mtOXPHOS from the gene dataset for the AU test. 
 
-After the last trimming, the gene dataset rested to X,XXX, entirely composed of a ERCnet orthogroups subset.
+The number of orthologs decreased from 2,353 to 2,342. 
 
-Each of X,XXX proteins were used as input for AU test, where we compared the topological preference towards the nuclear-based tree or the mitochondrial-based tree.
+Here, we realigned sequences: 
 
-All orthologs (both mitochondrial and nuclear proteins) were aligned using MAFFT (--maxiterate 1000 --localpair), and trimmed using TrimAl (-automated1). 
+        for a in HOG*; do mafft --maxiterate 1000 --localpair ${a} > aln_${a}; done  
 
-For each of the X,XXX alignments, we calculated gene trees as follow:
+and softly trimmed: 
 
-        iqtree -s trim_aln_[ortholog] -m MFP -B 1000 -T 16
+        for a in aln_HOG00*; do trimal -seqoverlap 50 -resoverlap 0.5 -in $a -out trim_${a}; done 
+        
+We re-check the species-per-clade and the number of orthologs decreased from 2,342 to 2,334. The lowest number of species per orthogrups is 15/31.  
 
-Gene models are stored in `gene_models.tsv`.
+Thus, after the last trimming, the gene dataset rested to 2,334, entirely composed of a ERCnet orthogroups subset.
 
-The two alternative topologies were created as follows:
-+ the **mitochondrial-based tree** (`mitochondrial_markers.treefile`) was a maximum likelihood tree using the 13 mtOXPHOS from 31 species (partition models).
+Each of 2,334 proteins were used as input for AU test, where we compared the topological preference towards the nuclear-based tree (`nuclear_markers.treefile`) or the mitochondrial-based tree (`mitochondrial_markers.treefile`). The unique difference among the two topologies concerns the sister relationship Acrodonta+Serpentes, that typically chareacterized the mitonuclear phylogenetic discordance in Squamata.
 
+Orthologs, their gene models and the two alternative topologies were used as follow to perform the AU test:
+
+        iqtree -s [ortholog].fa -m [model] -z topologies.nwk -n 0 -zb 10000 -au -T 32 -pre TEST_[ortholog].fa
+
+The script to integrate this command is here: `run_AU.sh`
+
+Results were summarized here: `AU_test_summary.tsv`.
+
+---
+
+### Mitochondrial and nuclear tree inference
+
++ the **mitochondrial-based tree** was a maximum likelihood tree using the 13 mtOXPHOS from 31 species (partition models).
+
+        for a in HOG*; do mafft --maxiterate 1000 --localpair ${a} > aln_${a}; done  
+        for a in aln_HOG00*; do trimal -automated1 -in $a -out trim_${a}; done 
         iqtree -s concatenated.out -p partitions.txt -m MFP+MERGE -b 100 -T 16 -pre ML_mitochondrial_squamata
         pwd: /home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/00_database/mtOXPHOS/all/01_ML
 
 + the **nuclear-based tree** (`nuclear_markers.treefile`) derived from a subset of orthologs composed of those genes with the same 31 species as in the mitochondrial dataset. It resulted in 681 orthologs (we excluded the mtXPHOS from this gene dataset). 
-      
+
+        for a in HOG*; do mafft --maxiterate 1000 --localpair ${a} > aln_${a}; done  
+        for a in aln_HOG00*; do trimal -gappyout -in $a -out trim_${a}; done       
         iqtree -s concatenated_681HOG.out -p partitions_681HOG.txt -m MFP+MERGE -B 1000 -T 16 -pre ML_speciestree_squamata
         pwd: /home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/03_Evolutionary_Rates_Covariation_Squamata/AUtest/01_AUtest/02_output_phylopypruner/phylopypruner_output/new_species_tree/outgroup
-
-Orthologs, their gene models and the two alternative topologies (nuclear and mitochondrial) were used as follow to perform the AU test:
-
-        iqtree -s [ortholog].fa -m [model] -z topologies.nwk -n 0 -zb 10000 -au -T 32 -pre TEST_[ortholog].fa
-
-Results were summarized here: `AU_test_summary.tsv`.
 
 ---
 

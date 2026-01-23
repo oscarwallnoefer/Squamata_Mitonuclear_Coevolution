@@ -52,7 +52,7 @@ Results were summarized here: `AU_test_summary.tsv`.
         iqtree -s concatenated.out -p partitions.txt -m MFP+MERGE -b 100 -T 16 -pre ML_mitochondrial_squamata
         pwd: /home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/00_database/mtOXPHOS/all/01_ML
 
-+ the **nuclear-based tree** (`nuclear_markers.treefile`) derived from a subset of orthologs composed of those genes with the same 31 species as in the mitochondrial dataset. It resulted in 681 orthologs (we excluded the mtXPHOS from this gene dataset). 
++ the **nuclear-based tree** derived from a subset of orthologs composed of those genes with the same 31 species as in the mitochondrial dataset. It resulted in 681 orthologs (we excluded the mtXPHOS from this gene dataset). 
 
         for a in HOG*; do mafft --maxiterate 1000 --localpair ${a} > aln_${a}; done  
         for a in aln_HOG00*; do trimal -gappyout -in $a -out trim_${a}; done       

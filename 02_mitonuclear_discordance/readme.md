@@ -41,6 +41,8 @@ The script to integrate this command is here: `run_AU.sh`
 
 Results were summarized here: `AU_test_summary.tsv`.
 
+Plot and stats were calculated on R: `ÀUtest_squamata.R`.
+
 ---
 
 ### Mitochondrial and nuclear tree inference

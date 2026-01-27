@@ -1,4 +1,4 @@
-# mitonuclear_discordance
+# mitonuclear discordance
 
 ---
 
@@ -64,6 +64,10 @@ Plot and stats were calculated on R: `ÀUtest_squamata.R`.
 ---
 
 ### Concordance Factors
+
+We performed gene trees for all the 2,334 nuclear orthologs and for 13 mtOXPHOS using the following command:
+
+        for a in *.fa; do iqtree3 -s ${a} -m MFP -mset LG -B 1000 -T 16; done 
 
 The R script to plot concordance factors ratio is `CF.R`.
 

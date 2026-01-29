@@ -72,11 +72,13 @@ We performed gene trees for all the 2,334 nuclear orthologs and for 13 mtOXPHOS 
 The R script to plot concordance factors ratio is `CF.R`.
 
 
-**gCF**
+**sCF**
 
         iqtree3 -te ML_speciestree_squamata.treefile -s concatenated_681HOG.out --scfl 1000
 
-
+**gCF**
+        
+        iqtree3 -te speciestree_ML.treefile --gcf ../06_astral/input_astral.treefile --prefix gCF
 
 ---
 

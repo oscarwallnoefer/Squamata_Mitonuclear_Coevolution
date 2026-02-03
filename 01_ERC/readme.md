@@ -63,7 +63,7 @@ GO background was prepared using this command:
 The file `GObackground.txt` associate 1,924 proteins to GO terms. We created a background specific for each network, subsampling Gobackground.txt. 
 GO enrichment was performed in R (`GOenrichment.R`, writted by @MirkMart). 
 
-We applied gene enrichment to multiple lists of interest extracted from ERC networks (i.e., communities, direct neighbours).
+We applied gene enrichment to multiple lists of interest extracted from ERC networks (i.e., communities, direct neighbours). Results were visualized in Revigo.
 
 ---
 
@@ -72,6 +72,6 @@ We applied gene enrichment to multiple lists of interest extracted from ERC netw
 
 We used AMAS to calculate assembly statistics on the 2,424 trimmed alingments.
 
-  AMAS.py summary -i GB_* -f fasta -d aa 
+    AMAS.py summary -i GB_* -f fasta -d aa 
 
 and visualized on R (`run_compare_stats.R`).

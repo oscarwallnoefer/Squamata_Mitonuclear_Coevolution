@@ -43,6 +43,9 @@ Results were summarized here: `AU_test_summary.tsv`.
 
 Plot and stats were calculated on R: `ÀUtest_squamata.R`.
 
+**Mitochondrial AUtest**
+here: /home/PERSONALE/oscar.wallnoefer2/MPMR_Squamata/03_Evolutionary_Rates_Covariation_Squamata/AUtest/01_AUtest/03_AUtest/03_mitochondrial_AUtest/02_AU_output
+
 ---
 
 ### Mitochondrial and nuclear tree inference

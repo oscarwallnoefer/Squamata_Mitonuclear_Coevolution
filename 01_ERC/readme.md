@@ -32,7 +32,7 @@ Metrics relative to sequences were compared between mtOXPHOS-first-neighbours an
 We wrote some python scripts:
 + communities identification: `run_louvain.py`
 + metrics (transitivity, edge density, mean distance, diameter): `run_metrics.py`
-+ plot and gene lists: `run_communities.py` 
++ plot and gene lists: `02_run_communities_update.py` 
 
 ---
 

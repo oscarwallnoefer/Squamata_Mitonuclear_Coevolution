@@ -9,15 +9,14 @@ import sys
 import numpy as np
 from collections import Counter
 
-
 def main():
-    parser = argparse.ArgumentParser(description="Highlight mitocondrial nodes and direct neighbors in .graphml")
+    parser = argparse.ArgumentParser(description="Highlight mitochondrial nodes and direct neighbors in .graphml")
     parser.add_argument("input_file", help="Path .graphml")
     args = parser.parse_args()
 
     input_file = args.input_file
     if not os.path.isfile(input_file):
-        print(f"Errore: '{input_file}' missing", file=sys.stderr)
+        print(f"'{input_file}' missing", file=sys.stderr)
         sys.exit(1)
 
     basename = os.path.splitext(os.path.basename(input_file))[0]
@@ -29,20 +28,13 @@ def main():
         print(f"Error: {e}", file=sys.stderr)
         sys.exit(1)
 
-    # ---------------- LAYOUT IDENTICO A SCRIPT 2 ----------------
-
     n_nodes = G.number_of_nodes()
     pos = nx.spring_layout(G, seed=1233, k=1/np.sqrt(n_nodes), iterations=100)
-
-    # replicate community compression
     community_attr = "community"
     communities = {n: d.get(community_attr, "0") for n, d in G.nodes(data=True)}
-
     comm_counts = Counter(communities.values())
     unique_comms = sorted(comm_counts.keys())
     color_comms = [c for c in unique_comms if comm_counts[c] >= 10]
-
-    # IMPORTANT: fix numpy seed for identical noise
     np.random.seed(1233)
 
     for comm in color_comms:
@@ -53,10 +45,7 @@ def main():
         center = np.mean([pos[n] for n in nodes_comm], axis=0)
         for n in nodes_comm:
             pos[n] = center + np.random.normal(scale=0.1, size=2)
-
-    # -------------------------------------------------------------
-
-    # Identify mt nodes
+# Identify mt nodes through functional category
     mito_nodes = []
     for n, d in G.nodes(data=True):
         cat = d.get('v_Functional_category') or d.get('Functional_category') or ''
@@ -65,7 +54,7 @@ def main():
 
     print(f"found {len(mito_nodes)} mt nodes")
 
-    # direct mitochondrial neighbors
+    # identify direct mitochondrial neighbors
     neighbor_nodes = set()
     for n in mito_nodes:
         neighbor_nodes.update(G.neighbors(n))
@@ -73,7 +62,6 @@ def main():
 
     print(f"found {len(neighbor_nodes)} mt neighbors")
 
-    # Colors
     node_colors = []
     for node in G.nodes():
         if node in mito_nodes:
@@ -83,7 +71,6 @@ def main():
         else:
             node_colors.append('steelblue')
 
-    # plot
     plt.figure(figsize=(20, 20))
 
     nx.draw_networkx_nodes(

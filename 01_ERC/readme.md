@@ -33,7 +33,7 @@ We wrote some python scripts:
 + communities identification: `run_louvain.py`
 + metrics (transitivity, edge density, mean distance, diameter): `run_metrics.py`
 + plot and gene lists: `02_run_communities_update.py`
-+ stats per network: `mito_neighbor_summary.tsv`
++ stats per network: `Network_stats.csv`
 + plot with mitochondrial first-neighbors highlighted: `04_run_mitochondrial_highlighted.py`
 + n° of mitochondrial genes and mt first-neighbors per network: `mito_neighbor_summary.tsv`
 ---

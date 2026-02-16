@@ -35,6 +35,7 @@ We wrote some python scripts:
 + plot and gene lists: `02_run_communities_update.py`
 + stats per network: `Network_stats.csv`
 + plot with mitochondrial first-neighbors highlighted: `04_run_mitochondrial_highlighted.py`
++ table network/mito_nodes/mito_neighbors/: `05_count_mito_neighbors.py`
 + n° of mitochondrial genes and mt first-neighbors per network: `mito_neighbor_summary.tsv`
 ---
 

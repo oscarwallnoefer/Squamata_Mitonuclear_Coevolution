@@ -37,6 +37,8 @@ We wrote some python scripts:
 + plot with mitochondrial first-neighbors highlighted: `04_run_mitochondrial_highlighted.py`
 + table network/mito_nodes/mito_neighbors/: `05_count_mito_neighbors.py`
 + n° of mitochondrial genes and mt first-neighbors per network: `mito_neighbor_summary.tsv`
++ table network statistics (degree, betweenness, closeness, centrality): `Comm_Cytoscape_network_Filtered_ERC_results_R2T_spearman_0.05_0.4_FDR_fg_trimcutoff_0_centralities.csv`
++ Calculate mitochondrial metrics into networks: `network_mitochondrial_metrics.R`
 ---
 
 # InterProScan and GO enrichment

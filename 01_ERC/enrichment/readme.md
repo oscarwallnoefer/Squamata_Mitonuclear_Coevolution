@@ -1,6 +1,6 @@
 # GO enrichment scripts and plots
 
-Biological process plots in Fig. 1,2 and 3 are R scripts written starting from Revigo's output.
+Biological process plots in Fig. 1 are R scripts written starting from Revigo's output.
 
 If you want to replicate this kind of plot: 
 

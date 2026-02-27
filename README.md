@@ -1,6 +1,6 @@
 # Squamata_Mitonuclear_Coevolution
 
-Scripts and files repository for "*A Network-based Perspective of Mitonuclear Coevolution in Squamata*", authored by Oscar Wallnoefer, Mirko Martini, Giorgia Galletti, Niccolò Gabriele, Federico Plazzi, Marco Passamonti.
+Scripts and files repository for "*A Network-based Perspective of Mitonuclear Coevolution in Squamata*", authored by Oscar Wallnoefer, Mirko Martini, Giorgia Galletti, Niccolò Gabriele, Marco Passamonti, Federico Plazzi.
 
 Affiliation: `University of Bologna`
 

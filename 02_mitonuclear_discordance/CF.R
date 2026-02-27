@@ -31,10 +31,7 @@ p <- ggplot(d, aes(x = gCF, y = sCF, label = ID)) +
   ) +
   labs(x = "gCF", y = "sCF", colour = "Bootstrap")
 
-# Mostra il plot
-print(p)
-
-# Salva in SVG
+p
 p <- p +
   scale_x_continuous(limits = c(0, 100)) +
   scale_y_continuous(limits = c(0, 100)) +

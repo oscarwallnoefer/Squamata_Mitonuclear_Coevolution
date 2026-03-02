@@ -7,3 +7,7 @@ In this folder:
 
 
 You can have an idea about the community gene content using the `01_ERC/InterProScan_output.tsv` file.
+
+
+Apply: 
++ `01_ERC/05_count_mito_neighbors.py` to create a .tsv file with n° of mitochondrial nodes and neighbors per network (as in `01_ERC/mito_neighbor_summary.tsv`)

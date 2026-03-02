@@ -11,3 +11,5 @@ You can have an idea about the community gene content using the `01_ERC/InterPro
 
 Apply: 
 + `01_ERC/05_count_mito_neighbors.py` to create a .tsv file with n° of mitochondrial nodes and neighbors per network (as in `01_ERC/mito_neighbor_summary.tsv`)
+
+All the outputs are stored in FigShare (see home repository)

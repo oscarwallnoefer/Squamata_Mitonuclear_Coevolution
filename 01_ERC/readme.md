@@ -1,6 +1,6 @@
 # ERC
 
-We followed the [ERCnet](https://github.com/EvanForsythe/ERCnet) pipeline. 
+We followed the [ERCnet](https://github.com/EvanForsythe/ERCnet) pipeline (Forsythe et al. 2025). 
 
 - [x] Phylogenomic analyses
 

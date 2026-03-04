@@ -20,7 +20,7 @@ We followed the [ERCnet](https://github.com/EvanForsythe/ERCnet) pipeline (Forsy
 
 ### Output
 
-The main output `ERC_results_R2T.tsv` contains all the combinations between each protein pair (n = 2,9). 
+The main output `ERC_results_R2T.tsv` contains all the combinations between each protein pair. 
 All the pairs involving at least one mitochondrial OXPHOS proteins are shown in `all_coevolving_mito_ERC.tsv`.
 
 Metrics relative to sequences were compared between mtOXPHOS-first-neighbours and total nuclear proteins using: `run_compare_stats.R`.

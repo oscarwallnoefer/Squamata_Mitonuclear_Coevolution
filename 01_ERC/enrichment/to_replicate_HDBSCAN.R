@@ -7,7 +7,6 @@ library(dplyr)
 # Define headers
 revigo.names <- c("term_ID","description","frequency","plot_X","plot_Y","log_size","value","uniqueness","dispensability")
 
-
 # Import revigo data
 revigo.data <- ############### COPY AND PASTE BP HERE!
 

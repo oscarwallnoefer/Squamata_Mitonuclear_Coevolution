@@ -4,6 +4,8 @@ Scripts and files repository for "*A Network-based Perspective of Mitonuclear Co
 
 Affiliation: `University of Bologna`
 
+Supplementary Data: https://doi.org/10.6084/m9.figshare.31455355
+
 ### Abstract
 
 **Background**

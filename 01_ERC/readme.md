@@ -18,7 +18,7 @@ We followed the [ERCnet](https://github.com/EvanForsythe/ERCnet) pipeline (Forsy
 
                 ./Network_analyses.py -j OUT_p1r20 -p [0.05/0.01/0.001] -r [0.4/0.5/0.6/0.7/0.8] -c spearman -m R2T -S -y fg -s Nnaj -F -L
 
-See 01_ERC/ for scritps.
+See 'ERC_networks/' for scritps.
   
 ---
 
